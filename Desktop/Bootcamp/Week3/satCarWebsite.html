@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div id="myCarWebsite">
+
+<script type="text/javascript">
+
+// Car Example below
+
+	var car = {
+		make: "Jeep",
+		model: "Cherokee",
+		color: "Blue",
+		mileage: 11000,
+		isWorking: true,
+
+		driveToWork: function(){
+
+			alert("Old Mileage: " + this.mileage)
+			
+			this.mileage = this.mileage + 8;
+			
+			alert("New mileage: " + this.mileage);
+		},
+
+		driveAroundWorld: function(){
+
+			alert("Old Mileage: " + this.mileage);
+
+			this.mileage = this.mileage + 24000;
+
+			alert("New Mileage: " + this.mileage);
+			alert("Car needs a tuneup!")
+
+			this.isWorking = false;
+		},
+
+		getTuneUp: function(){
+			alert("Car is ready to go!");
+			this.isWorking = true;
+		},
+
+		honk: function(){
+			alert("Meeeeeeeeowwwww")
+		} 
+	}
+
+	var carOptions = ['h', 'd', 'w', 't'];
+
+// Captures Key To Trigger Car Events
+document.onkeyup = function(event) {
+
+	// Determines which exact key was selected. Make it lowercase
+	var userChoice = String.fromCharCode(event.keyCode).toLowerCase();
+
+		if ((userChoice) === 'h' || (userChoice === 'd') || (userChoice === 'w') || (userChoice === 't')){
+		
+			if (userChoice === 'h') 
+			car.honk();
+			if (userChoice === 'd')
+			car.driveToWork();
+			if (userChoice === 'w')
+			car.driveAroundWorld();
+			if (userChoice === 't')
+			car.getTuneUp();
+	}
+}
+	// Fill page
+	var html = "<h> <b> Car Adventure - <br><br> Type 'h' to honk, 'd' to drive to work, 'w' to drive around the world, or 't' to get a tuneup.<br><br> See console for car stats</h>"
+	document.querySelector('#myCarWebsite').innerHTML = html;
+
+
+	// Console output full car stats
+	console.log(car);
+	console.log(car.honk)
+
+
+</script>
+</div>
+</body>
+</html>

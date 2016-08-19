@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p>	Welcome! Select r / p / s to play Rock, Paper, Scissors!</p>
+
+	<div id="game">  </div>
+
+<script type="text/javascript">
+
+// Farm Example
+	/* Build array
+	var myFarm = ['chickens', 'pigs', 'cows', 'horses', 'ostriches'];	
+
+	// Make For Loop
+	for (var i =0; i < myFarm.length; i++) {
+		console.log(myFarm[i]);
+		if (myFarm[i].charAt(0) === "c" || myFarm[i].charAt(0) === "o")
+			alert("Starts with c or o!");
+	} 
+	*/
+
+// Rock / Paper / Scissors
+	
+	var options = ['r', 'p', 's'];
+	//var userChoice = prompt("Enter 'r' for Rock, 'p' for Paper, 's' for Scissors...Good Luck!");
+	var wins = 0;
+	var losses = 0;
+	var ties = 0;
+
+// Captures Key Clicks
+document.onkeyup = function(event) {
+
+	// Determines which exact key was selected. Make it lowercase
+	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+
+	// Alerts with user guess
+	console.log('User Guess', userGuess);
+
+	// Create code to randomly choose one of the three options (Computer) 
+	var computerGuess = options[Math.floor(Math.random()*options.length)];
+
+	// Alerts w computer guess
+	console.log('Compuer Guess', computerGuess); 
+
+
+	// r beats s / s beats p / p beats r / ties
+	if ((userGuess) === 'r' || (userGuess === 'p') || (userGuess === 's')){
+
+		if (userGuess === computerGuess)
+			ties++;
+		if ((userGuess === 'r' && computerGuess === 's') || 
+			(userGuess === 's' && computerGuess === 'p') ||
+			(userGuess === 'p' && computerGuess === 'r'))
+			wins++;
+		if ((computerGuess === 'r' && userGuess === 's') || 
+			(computerGuess === 's' && userGuess === 'p') ||
+			(computerGuess === 'p' && userGuess === 'r'))
+			losses++;
+	}
+
+	console.log('Wins', wins)
+	console.log('Losses', losses)
+	console.log('Ties', ties)
+
+	// Print win/loss/tie to screen
+	document.querySelector('#game').innerHTML = 'wins: ' + wins + "<br>" + ' losses: ' + losses + "<br>" + ' ties: ' + ties ;
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>My First Function</title>
+</head>
+<body>
+	
+	<script>
+
+		// FUNCTIONS
+		// ================================================================================
+
+		// Creates Function called "adder" with three arguments (x, y, z) that get passed into it and console.log the result
+
+		function adder(x, y, z){
+	
+			console.log("Adder Function = " + (x + y + z));
+		}	
+
+		// Creates a Function called "multiplier" with three arguments (x, y, z) that get passed into it and console.log the result
+
+		function multiplier(x, y, z){
+
+			console.log("Multiplier Function = " + (x * y * z));
+		}
+
+
+		// Creates a function called "isString" with three arguments (x, y, z) that get passed into it and console.log whether all three are a string or not
+
+
+		function isString(x, y, z){
+
+			if(typeof x === "string" && typeof y === "string"){
+				console.log("You typed all strings");
+			}
+			else{
+				console.log("Nope...at least one is not a string")
+			}
+		}
+
+
+		// Creates a function called "vowelChecker" that takes in a single argument (x) and console.log's whether the value is a vowel or not
+
+		
+		function vowelChecker(x){
+			firstCharacter = x.toLowerCase().charAt[0];
+
+		if (firstCharacter === "a" || firstCharacter === "e" || firstCharacter === "i" || firstCharacter === "o" || firstCharacter === "u"){
+				
+				console.log("Vowel found");
+			}
+
+			else{
+				console.log("No vowel");
+			}
+		}
+
+		// FUNCTION EXECUTION
+		// ================================================================================
+
+		// Add in the lines of code below necessary to "call" the functions you created above.
+		
+		
+		// Call the adder function here
+		
+		adder(2,3,4);
+
+		
+		// Call the multiplier function here. 
+
+		
+		multiplier(2,3,4);
+
+
+		// Call the isString function here.
+
+		isString("text", 2);
+
+
+		// Call the vowelChecker function here.
+		vowelChecker("apple");
+
+
+	</script>
+
+</body>
+</html>
