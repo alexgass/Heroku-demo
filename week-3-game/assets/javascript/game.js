@@ -3,39 +3,39 @@ Main.wordArray = [];
 Main.wordUArray = [];
 
 Main.lives = 4;
-Main.numbWord = Words.Length;
+Main.numbWord = words.Length;
 
-var Word = ["test"];
+var word = ["test"];
 Main.wordU = "";
 
 //Functions
 
 Main.pullWord = function(){
-	Main.word = Words.List[(Math.floor(Math.random()*Main.numbWord))]
+	Main.word = words.List[(Math.floor(Math.random()*Main.numbWord))]
 }
 
 Main.setUnderline = function(){
 	Main.pullWord();
-	for (i=0; i < Main.word.Length; i++) {
-		 main.wordArray[i] = Main.word.charAt(i);
-		 main.wordUArray[i] = "_";
+	for (i=0; i < words.length; i++) {
+		 Main.wordArray[i] = Main.word.charAt(i);
+		 Main.wordUArray[i] = "_";
 	}
 	Main.wordU = Main.wordUArray.join("");
 	document.getElementById("WORD").innerHTML = Main.wordU;
-	document.getElementById("numLetters").innerHTML = Main.Word.length;
+	document.getElementById("numLetters").innerHTML = words.length;
 }
 
 Main.updateLetter = function(letter){
-	main.changes = 0;
-	for (i = 0; i < Main.word.length; i++){
+	Main.changes = 0;
+	for (i = 0; i < words.length; i++){
 		Main.wordArray[i] = Main.word.charAt(i);
 		if(Main.word.charAt(i) === letter){
 			Main.wordUArray[i] = letter;
-			Main.changes ++1;
+			Main.changes++;
 		}
 	}
 	if(Main.changes < 1){
-		Main.lives --1;
+		Main.lives--;
 		document.getElementById("lives").innerHTML = Main.lives;
 	}
 
@@ -45,7 +45,7 @@ Main.updateLetter = function(letter){
 	Main.word1 = Main.wordArray.join("");
 	Main.word2 = Main.wordUArray.join("");
 
-	if(Main.word1 === main.word2) {
+	if(Main.word1 === Main.word2) {
 		alert("You Win! Now a new word");
 	}
 
@@ -54,7 +54,7 @@ Main.updateLetter = function(letter){
 		alert("You Dead!!!");
 		window.location.reload();
 	}
-
+}
 	Main.pullWord();
 	Main.setUnderline();
 

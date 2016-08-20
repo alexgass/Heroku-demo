@@ -1,4 +1,4 @@
-words = {};
+var words = {};
 
 words.List = [];
 
