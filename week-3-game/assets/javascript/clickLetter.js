@@ -1,4 +1,12 @@
 $(function(){
+	$("#letters").click(function(event){
+		event.preventDefault();
+		Main.updateLetter(this.id);
+	});
+});
+
+/*
+$(function(){
 	$("#a").click(function(event){
 		event.preventDefault();
 		Main.updateLetter("a");
@@ -180,3 +188,4 @@ $(function(){
 	});
 });
 
+*/
