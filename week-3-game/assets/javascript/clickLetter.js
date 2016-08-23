@@ -1,9 +1,9 @@
-$(function(){
-	$("#letters").click(function(event){
+
+	$(".letter").click(function(event){
 		event.preventDefault();
 		Main.updateLetter(this.id);
 	});
-});
+
 
 /*
 $(function(){

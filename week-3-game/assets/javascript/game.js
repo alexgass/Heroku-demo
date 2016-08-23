@@ -3,16 +3,37 @@ Main.wordArray = [];
 Main.wordUArray = [];
 
 Main.lives = 4;
-Main.numbWord = words.Length;
 
-var word = ["test"];
+Main.word = ["test"];
 Main.wordU = "";
 
+//Make word list
+
+
+var words = [];
+
+words[0] = "cattle";
+words[1] = "texas";
+words[2] = "fishsticks";
+words[3] = "howdy";
+words[4] = "cowboy";
+words[5] = "amarillo";
+words[6] = "chicken";
+words[7] = "thunderstorm";
+words[8] = "fishing";
+words[9] = "coffee";
+words[10] = "avalanche";
+
+Main.numbWord = words.length;
+
+//words.length = words.list.length;
 //Functions
 
 Main.pullWord = function(){
-	Main.word = words.List[(Math.floor(Math.random()*Main.numbWord))]
+	Main.word = words[(Math.floor(Math.random()*Main.numbWord))];
+	console.log(Main)
 }
+
 
 Main.setUnderline = function(){
 	Main.pullWord();
@@ -55,6 +76,13 @@ Main.updateLetter = function(letter){
 		window.location.reload();
 	}
 }
+
+	$(".letter").click(function(event){
+	event.preventDefault();
+	Main.updateLetter(this.id);
+	console.log(this.id);
+	});
+
 	Main.pullWord();
 	Main.setUnderline();
 
